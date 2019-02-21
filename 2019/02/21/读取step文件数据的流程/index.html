@@ -14,19 +14,19 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1、文件预处理模块以ascii码的形式读入STEP中性交换文件，将整个文件数据读入到一个字符串数组中。在step中性文件的数据段中每一行字符串表示的是一个几何形状特征。通过循环分别提取出数据段每个几个何形状特征的相关信息。对于每个实体特征数据的提取采用字符串分割处理的方法。整个数据段提取信息流程：：  经过这个步骤，将信息分割成各个部分，简化文件的信息后将各个分割段的信息分类保存。  将提取的信息">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="c:/Users/Lxj/Desktop/25de4316828badc396630443c4f01f9.png">
-<meta property="og:image" content="c:/Users/Lxj/AppData/Roaming/Typora/typora-user-images/1548210419065.png">
-<meta property="og:image" content="c:/Users/Lxj/AppData/Roaming/Typora/typora-user-images/1548211639793.png">
-<meta property="og:image" content="c:/Users/Lxj/AppData/Roaming/Typora/typora-user-images/1548211696044.png">
-<meta property="og:image" content="c:/Users/Lxj/AppData/Roaming/Typora/typora-user-images/1548223211815.png">
-<meta property="og:image" content="c:/Users/Lxj/AppData/Roaming/Typora/typora-user-images/1548223579881.png">
-<meta property="og:image" content="c:/Users/Lxj/AppData/Roaming/Typora/typora-user-images/1548224059194.png">
-<meta property="og:image" content="c:/Users/Lxj/AppData/Roaming/Typora/typora-user-images/1548225060175.png">
-<meta property="og:updated_time" content="2019-01-23T11:18:09.155Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/Users/Lxj/Desktop/25de4316828badc396630443c4f01f9.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548210419065.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548211639793.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548211696044.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548223211815.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548223579881.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548224059194.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548225060175.png">
+<meta property="og:updated_time" content="2019-02-21T02:03:17.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="1、文件预处理模块以ascii码的形式读入STEP中性交换文件，将整个文件数据读入到一个字符串数组中。在step中性文件的数据段中每一行字符串表示的是一个几何形状特征。通过循环分别提取出数据段每个几个何形状特征的相关信息。对于每个实体特征数据的提取采用字符串分割处理的方法。整个数据段提取信息流程：：  经过这个步骤，将信息分割成各个部分，简化文件的信息后将各个分割段的信息分类保存。  将提取的信息">
-<meta name="twitter:image" content="c:/Users/Lxj/Desktop/25de4316828badc396630443c4f01f9.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/Users/Lxj/Desktop/25de4316828badc396630443c4f01f9.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -86,27 +86,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="1、文件预处理模块"><a href="#1、文件预处理模块" class="headerlink" title="1、文件预处理模块"></a>1、文件预处理模块</h1><p>以ascii码的形式读入STEP中性交换文件，将整个文件数据读入到一个字符串数组中。在step中性文件的数据段中每一行字符串表示的是一个几何形状特征。通过循环分别提取出数据段每个几个何形状特征的相关信息。对于每个实体特征数据的提取采用字符串分割处理的方法。整个数据段提取信息流程：：</p>
-<p><img src="C:\Users\Lxj\Desktop\25de4316828badc396630443c4f01f9.png" alt="25de4316828badc396630443c4f01f9"></p>
+<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/Users\Lxj\Desktop\25de4316828badc396630443c4f01f9.png" alt="25de4316828badc396630443c4f01f9"></p>
 <p>经过这个步骤，将信息分割成各个部分，简化文件的信息后将各个分割段的信息分类保存。</p>
-<p><img src="C:\Users\Lxj\AppData\Roaming\Typora\typora-user-images\1548210419065.png" alt="1548210419065"></p>
+<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548210419065.png" alt></p>
 <p>将提取的信息以结构体的形式保存。将分割后的字符串输入到对应的结构体中对应成员变量中，完成信息的预处理。</p>
 <h1 id="2、实体对象的构造和存储"><a href="#2、实体对象的构造和存储" class="headerlink" title="2、实体对象的构造和存储"></a>2、实体对象的构造和存储</h1><p>预处理的功能就是将文件中表述的各个实体以结构体的形式保存在内存中，由于目前 在文件中各个实体是独立的，因此需要将这些实体按照STEP的数据模型重新组合。</p>
 <p>也就是说建立起，根据预处理阶段的结构体中的实体关键字，查找关键字在内存中所对应的c++类的实体描述，建立与c++的描述的映射关系。将一些参数传递，比如实体名称、实体属性值等，作为参数传递给对应类的参数构造函数，构造c++实体对象。</p>
 <h3 id="step实体在内存中的数据结构"><a href="#step实体在内存中的数据结构" class="headerlink" title="step实体在内存中的数据结构"></a>step实体在内存中的数据结构</h3><p>STep实体在内存中通过c++中的链表结构来实现其数据结构。点类、矢量类、线类的实例化后，就将每类的实体都保存在一个表内保存，实体之间存在一定的拓扑关系，在内存中通过链表的连接路径来描述实体间的拓扑关系。</p>
-<p><img src="C:\Users\Lxj\AppData\Roaming\Typora\typora-user-images\1548211639793.png" alt="1548211639793"></p>
+<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548211639793.png" alt></p>
 <p>最后所有的实体实例化之后形成一个关于实体的链表形式的数据结构。</p>
-<h4 id><a href="#" class="headerlink" title></a><img src="C:\Users\Lxj\AppData\Roaming\Typora\typora-user-images\1548211696044.png" alt="1548211696044"></h4><h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>特征提取主要是将保存在内存中的STEP各个实体信息经过特征识别之后，提取出能描述该特征的数据信息。特征提取可以分为两个部门：特征识别、特征提取。</p>
+<h4 id><a href="#" class="headerlink" title></a><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548211696044.png" alt></h4><h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>特征提取主要是将保存在内存中的STEP各个实体信息经过特征识别之后，提取出能描述该特征的数据信息。特征提取可以分为两个部门：特征识别、特征提取。</p>
 <p>根据B_REP表示法原理，从“CLOSED_STHELL”入手识别。在STEP中性文件中一个CLOSED_STHELL实体是由多个advanced_face面拼合而成的，而advanced_face又是由曲面的参数与边界类型构成的，因此可以通过识别advancde_face的类型和数量来识别出表达的实体。</p>
 <p>通过分析，可以看出STEP文件中的圆柱体是由两个SuRFACE曲面和两个PLANE平面，共计四个Advanced_face组成的，我们将这些特征作为识别圆柱体的规则。</p>
 <p>识别过程如下：遍历STEP中间数据文件中的Closed_shell实体类，判断其中advanced_face的数量，再通过判断advanced_face中曲面的关键字，最终判别描述该实体是否为 圆柱体。</p>
-<p><img src="C:\Users\Lxj\AppData\Roaming\Typora\typora-user-images\1548223211815.png" alt="1548223211815"></p>
+<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548223211815.png" alt></p>
 <p>特征识别子模块的工作对象是前步已经实例化的各个实体对象。要按照程序的链表式识别简单实体特征，并得到该实体的特征值。</p>
-<p><img src="C:\Users\Lxj\AppData\Roaming\Typora\typora-user-images\1548223579881.png" alt="1548223579881"></p>
+<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548223579881.png" alt></p>
 <p>比如说一个球体：是由两个形状一样的半球面构成的，访问该球面的实例对象PSPHERICAL_SURFACE读取定形数据和定位数据。</p>
-<p><img src="C:\Users\Lxj\AppData\Roaming\Typora\typora-user-images\1548224059194.png" alt="1548224059194"></p>
+<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548224059194.png" alt></p>
 <p>得到完整的球体的造型数据模型并进行串行化处理。</p>
 <h3 id="数据转换（自定义函数）"><a href="#数据转换（自定义函数）" class="headerlink" title="数据转换（自定义函数）"></a>数据转换（自定义函数）</h3><p>在特征识别模块所得到的简单实体的造型数据式通过分析提取出来并实例化 给特定的类的，它可以另外存储并产生一个中间文件，然后根据不同的应用系统再设计各自的数据转换器。 </p>
-<p><img src="C:\Users\Lxj\AppData\Roaming\Typora\typora-user-images\1548225060175.png" alt="1548225060175"></p>
+<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548225060175.png" alt></p>
 <p>特征提取的过程： </p>
 <p>（1）从球面实体实例提取特征值：定位数据和半径</p>
 <p>（2）建立球体的显示颜色和材质等辅助属性</p>
@@ -116,7 +116,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/21/读取step文件数据的流程/" data-id="cjsdy7euk0001o4toyk0aantp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/21/读取step文件数据的流程/" data-id="cjsdzg8bp0003b0tochyl20rl" class="article-share-link">Share</a>
       
       
     </footer>
