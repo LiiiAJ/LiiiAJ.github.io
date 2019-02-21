@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于对qt的学习   什么是qt  qt主要是用来做什么  Qcreator的几个部分  以及qtcreator的使用  如何建立-如何使用，然后编写一个小程序，比如说使用槽关联函数，  使用槽进行子类父类之间通信的案例  qt实现一个小游戏，并且讲解一下这个小游戏   QT之事件对于qt事件接受与否的理解，比如说点击串口的X号，弹出一个messagebox提示窗口。 可以提示你，要不要关闭窗口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/QT之事件/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于对qt的学习   什么是qt  qt主要是用来做什么  Qcreator的几个部分  以及qtcreator的使用  如何建立-如何使用，然后编写一个小程序，比如说使用槽关联函数，  使用槽进行子类父类之间通信的案例  qt实现一个小游戏，并且讲解一下这个小游戏   QT之事件对于qt事件接受与否的理解，比如说点击串口的X号，弹出一个messagebox提示窗口。 可以提示你，要不要关闭窗口">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-21T08:04:02.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="关于对qt的学习   什么是qt  qt主要是用来做什么  Qcreator的几个部分  以及qtcreator的使用  如何建立-如何使用，然后编写一个小程序，比如说使用槽关联函数，  使用槽进行子类父类之间通信的案例  qt实现一个小游戏，并且讲解一下这个小游戏   QT之事件对于qt事件接受与否的理解，比如说点击串口的X号，弹出一个messagebox提示窗口。 可以提示你，要不要关闭窗口">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-QT之事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/21/QT之事件/" class="article-date">
+  <time datetime="2019-02-21T08:04:01.934Z" itemprop="datePublished">2019-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>关于对qt的学习</p>
+<hr>
+<ol>
+<li><p>什么是qt</p>
+</li>
+<li><p>qt主要是用来做什么</p>
+</li>
+<li><p>Qcreator的几个部分</p>
+</li>
+<li><p>以及qtcreator的使用</p>
+</li>
+<li><p>如何建立-如何使用，然后编写一个小程序，比如说使用槽关联函数，</p>
+</li>
+<li><p>使用槽进行子类父类之间通信的案例</p>
+</li>
+<li><p>qt实现一个小游戏，并且讲解一下这个小游戏</p>
+</li>
+</ol>
+<h1 id="QT之事件"><a href="#QT之事件" class="headerlink" title="QT之事件"></a>QT之事件</h1><p>对于qt事件接受与否的理解，比如说点击串口的X号，弹出一个messagebox提示窗口。</p>
+<p>可以提示你，要不要关闭窗口，也就是说鼠标的点击是一个事件，e由event() 函数，传递事件，然后参数中的E-&gt;accept() 和 E-&gt;ignore()函数，，，一个是接受事件的信号，之后不再往下传了，另一个就是忽略信号了。</p>
+<h2 id="event-函数"><a href="#event-函数" class="headerlink" title="event 函数"></a>event 函数</h2><p>event（）函数的作用就是事件分发了， 比如说  QWIdget -&gt;Event（）—》传递 给鼠标事件或者说传递给   键盘事件，</p>
+<p>参数e 有一个type（），通过type（）返回的值，来判断到底e触发的是哪一种事件，是QEvent::close ，那么就会执行closeevent(e).break 。</p>
+<p>如果是QEvent::MouseMove， 那么就会执行mouseMoveEvent(e).</p>
+<h3 id="事件过滤器"><a href="#事件过滤器" class="headerlink" title="事件过滤器"></a>事件过滤器</h3><p> 事件过滤器主要是，在那个一个一个event事件之前, 定义的一个过滤器，，可以判断对哪个事件进行处理，对哪个事件不进行处理。</p>
+<p>事件过滤器和被安装过滤器的组件必须在 同一个线程，否则。过滤器将不起作用。另外，如果在安装过滤器之后，这两个组件到了不同的线程，那么，只有等到二者重新回到同一线程的时候过滤器才会有效。</p>
+<h3 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h3><p>QT 的事件是整个QT框架的核心机制之一，也比较复杂。说它复杂，更多是因为它涉及到的函数众多，而处理方法也很多。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/21/QT之事件/" data-id="cjsecc11b0000c4tok6thtpaw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/21/读取step文件数据的流程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/21/QT之事件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/读取step文件数据的流程/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/第一个typora/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/20/lxj-cy-the-first-day-2-19/">lxj-cy the first day 2.19</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/20/你好，cy-，this-is-my-first-article/">你好，cy ，this is my first article</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
