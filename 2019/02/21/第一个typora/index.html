@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="指定父对象，只需要父对象显示，子对象不用显示 ； 设置父对象的方式: 1) setparent ​                2)通过构造函数传参（传参是传到qpushbuton） &amp;amp;b1:   信号发出者，指针类型 &amp;amp;QPushButton ：：pressed 处理的信号    &amp;amp;发送者的类名：：信号的 名字 this :    信号接受者 1&amp;amp;myWidge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/第一个typora/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="指定父对象，只需要父对象显示，子对象不用显示 ； 设置父对象的方式: 1) setparent ​                2)通过构造函数传参（传参是传到qpushbuton） &amp;amp;b1:   信号发出者，指针类型 &amp;amp;QPushButton ：：pressed 处理的信号    &amp;amp;发送者的类名：：信号的 名字 this :    信号接受者 1&amp;amp;myWidge">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-23T01:47:42.254Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="指定父对象，只需要父对象显示，子对象不用显示 ； 设置父对象的方式: 1) setparent ​                2)通过构造函数传参（传参是传到qpushbuton） &amp;amp;b1:   信号发出者，指针类型 &amp;amp;QPushButton ：：pressed 处理的信号    &amp;amp;发送者的类名：：信号的 名字 this :    信号接受者 1&amp;amp;myWidge">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-第一个typora" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/21/第一个typora/" class="article-date">
+  <time datetime="2019-02-21T01:28:36.927Z" itemprop="datePublished">2019-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>指定父对象，只需要父对象显示，子对象不用显示 ；</p>
+<p>设置父对象的方式: 1) setparent</p>
+<p>​                2)通过构造函数传参（传参是传到qpushbuton）</p>
+<p>&amp;b1:   信号发出者，指针类型</p>
+<p>&amp;QPushButton ：：pressed 处理的信号    &amp;发送者的类名：：信号的 名字</p>
+<p>this :    信号接受者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;myWidget::close  ：：槽函数 信号处理函数    &amp;接收者的名字 ：：槽的名字</span><br></pre></td></tr></table></figure>
+<p>自定义槽  普通函数的用法  </p>
+<p>QT5  :任意的成员函数，普通全局函数，静态函数</p>
+<p>槽函数需要和信号一致， （参数返回值）</p>
+<p>由于信号都是没有返回值的因此槽函数也都是没有返回值的</p>
+<p>信号： 短信 ；</p>
+<p>槽：接收的手机</p>
+<p>在子窗口中 要声明一个信号，，，必须要有一个关键字 ，，，siginals</p>
+<p>信号没有返回值但是可以有参数</p>
+<p>信号就是函数的声明 ，只需声明无须调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  connect(&amp;w,&amp;subwidget::mysignal,this,&amp;myWidget::changed);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  #include&lt;iostream&gt;</span><br><span class="line">using namspace std;</span><br><span class="line"></span><br><span class="line">typedef char ElemType;</span><br><span class="line"></span><br><span class="line">typedef struct  BiTNode</span><br><span class="line">&#123;</span><br><span class="line">	char data;</span><br><span class="line">	 BiTNode *left,*right;</span><br><span class="line">	  </span><br><span class="line">&#125; BiTNode,*BiTree;</span><br></pre></td></tr></table></figure>
+<p>##　在C中，这个申明后申请结构变量的方法有两种：</p>
+<p>　　　　（1）struct tagMyStruct 变量名</p>
+<p>　　　　（2）MyStruct 变量名</p>
+<p>　　　　在c++中可以有</p>
+<p>　　　　（1）struct tagMyStruct 变量名</p>
+<p>　　　　（2）MyStruct 变量名</p>
+<p>######　　　（3）tagMyStruct 变量名</p>
+<h4 id="BiTree-tree-指的是定义了一个指向结构体的指针。"><a href="#BiTree-tree-指的是定义了一个指向结构体的指针。" class="headerlink" title="BiTree tree 指的是定义了一个指向结构体的指针。"></a>BiTree tree 指的是定义了一个指向结构体的指针。</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/21/第一个typora/" data-id="cjsdy7ety0000o4torpxx327i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/02/21/读取step文件数据的流程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/02/20/lxj-cy-the-first-day-2-19/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">lxj-cy the first day 2.19</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/21/读取step文件数据的流程/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/第一个typora/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/20/lxj-cy-the-first-day-2-19/">lxj-cy the first day 2.19</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/20/你好，cy-，this-is-my-first-article/">你好，cy ，this is my first article</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/20/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
