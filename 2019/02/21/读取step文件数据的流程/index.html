@@ -18,11 +18,11 @@
 <meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548210419065.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548211639793.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548211696044.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548223211815.png">
+<meta property="og:image" content="https://LiiiAJ.github.io/1548223211815.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548223579881.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548224059194.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/21/读取step文件数据的流程/blog/source/_posts/读取step文件数据的流程/1548225060175.png">
-<meta property="og:updated_time" content="2019-02-21T02:06:55.085Z">
+<meta property="og:updated_time" content="2019-02-21T02:10:11.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="1、文件预处理模块以ascii码的形式读入STEP中性交换文件，将整个文件数据读入到一个字符串数组中。在step中性文件的数据段中每一行字符串表示的是一个几何形状特征。通过循环分别提取出数据段每个几个何形状特征的相关信息。对于每个实体特征数据的提取采用字符串分割处理的方法。整个数据段提取信息流程：：  经过这个步骤，将信息分割成各个部分，简化文件的信息后将各个分割段的信息分类保存。  将提取的信息">
@@ -99,7 +99,7 @@
 <p>根据B_REP表示法原理，从“CLOSED_STHELL”入手识别。在STEP中性文件中一个CLOSED_STHELL实体是由多个advanced_face面拼合而成的，而advanced_face又是由曲面的参数与边界类型构成的，因此可以通过识别advancde_face的类型和数量来识别出表达的实体。</p>
 <p>通过分析，可以看出STEP文件中的圆柱体是由两个SuRFACE曲面和两个PLANE平面，共计四个Advanced_face组成的，我们将这些特征作为识别圆柱体的规则。</p>
 <p>识别过程如下：遍历STEP中间数据文件中的Closed_shell实体类，判断其中advanced_face的数量，再通过判断advanced_face中曲面的关键字，最终判别描述该实体是否为 圆柱体。</p>
-<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548223211815.png" alt></p>
+<p><img src="https://LiiiAJ.github.io/1548223211815.png" alt></p>
 <p>特征识别子模块的工作对象是前步已经实例化的各个实体对象。要按照程序的链表式识别简单实体特征，并得到该实体的特征值。</p>
 <p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548223579881.png" alt></p>
 <p>比如说一个球体：是由两个形状一样的半球面构成的，访问该球面的实例对象PSPHERICAL_SURFACE读取定形数据和定位数据。</p>

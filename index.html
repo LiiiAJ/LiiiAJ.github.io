@@ -88,7 +88,7 @@
 <p>根据B_REP表示法原理，从“CLOSED_STHELL”入手识别。在STEP中性文件中一个CLOSED_STHELL实体是由多个advanced_face面拼合而成的，而advanced_face又是由曲面的参数与边界类型构成的，因此可以通过识别advancde_face的类型和数量来识别出表达的实体。</p>
 <p>通过分析，可以看出STEP文件中的圆柱体是由两个SuRFACE曲面和两个PLANE平面，共计四个Advanced_face组成的，我们将这些特征作为识别圆柱体的规则。</p>
 <p>识别过程如下：遍历STEP中间数据文件中的Closed_shell实体类，判断其中advanced_face的数量，再通过判断advanced_face中曲面的关键字，最终判别描述该实体是否为 圆柱体。</p>
-<p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548223211815.png" alt></p>
+<p><img src="https://LiiiAJ.github.io/1548223211815.png" alt></p>
 <p>特征识别子模块的工作对象是前步已经实例化的各个实体对象。要按照程序的链表式识别简单实体特征，并得到该实体的特征值。</p>
 <p><img src="//yoursite.com/2019/02/21/读取step文件数据的流程/blog\source\_posts\读取step文件数据的流程\1548223579881.png" alt></p>
 <p>比如说一个球体：是由两个形状一样的半球面构成的，访问该球面的实例对象PSPHERICAL_SURFACE读取定形数据和定位数据。</p>
