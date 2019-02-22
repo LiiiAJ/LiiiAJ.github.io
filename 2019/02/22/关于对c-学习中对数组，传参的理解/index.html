@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="c++疑问：：：： 书上的： 12345int fun(int array[3][3])             fun（array） 一维数组查到的是： 数组传递的是数组的首地址，形参可以不用说明数组的大小。(指的是一维数组) 123void test(int array[])//形参，也可以是这样    void test（int *array） //形参定义一个指针变量接受，实参传递的数组的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-22T02:57:44.568Z">
+<meta property="og:updated_time" content="2019-02-22T03:12:15.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于对c++学习中对数组，传参的理解">
 <meta name="twitter:description" content="c++疑问：：：： 书上的： 12345int fun(int array[3][3])             fun（array） 一维数组查到的是： 数组传递的是数组的首地址，形参可以不用说明数组的大小。(指的是一维数组) 123void test(int array[])//形参，也可以是这样    void test（int *array） //形参定义一个指针变量接受，实参传递的数组的">
@@ -118,6 +118,7 @@
 <p>fun(a, 3, 3);</p>
 <p>根据不同编译器不同的设置，可能出现warning 或者error,可以进行强制转换如下调用：</p>
 <p>fun((int**)a, 3, 3); </p>
+<h3 id="关于strcat"><a href="#关于strcat" class="headerlink" title="关于strcat"></a>关于strcat</h3><p>字符数组1的长度要足够大，否则不能够装下连接后的字符串</p>
 
       
     </div>
