@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>关于对c++学习中对数组，传参的理解 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="c++疑问：：：： 书上的： 12345int fun(int array[3][3])             fun（array） 一维数组查到的是： 数组传递的是数组的首地址，形参可以不用说明数组的大小。(指的是一维数组) 123void test(int array[])//形参，也可以是这样    void test（int *array） //形参定义一个指针变量接受，实参传递的数组的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于对c++学习中对数组，传参的理解">
+<meta property="og:url" content="http://yoursite.com/2019/02/22/关于对c-学习中对数组，传参的理解/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="c++疑问：：：： 书上的： 12345int fun(int array[3][3])             fun（array） 一维数组查到的是： 数组传递的是数组的首地址，形参可以不用说明数组的大小。(指的是一维数组) 123void test(int array[])//形参，也可以是这样    void test（int *array） //形参定义一个指针变量接受，实参传递的数组的">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-22T02:57:44.568Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于对c++学习中对数组，传参的理解">
+<meta name="twitter:description" content="c++疑问：：：： 书上的： 12345int fun(int array[3][3])             fun（array） 一维数组查到的是： 数组传递的是数组的首地址，形参可以不用说明数组的大小。(指的是一维数组) 123void test(int array[])//形参，也可以是这样    void test（int *array） //形参定义一个指针变量接受，实参传递的数组的">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-关于对c-学习中对数组，传参的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/22/关于对c-学习中对数组，传参的理解/" class="article-date">
+  <time datetime="2019-02-22T01:58:56.000Z" itemprop="datePublished">2019-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于对c++学习中对数组，传参的理解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="c"><a href="#c" class="headerlink" title="c++"></a>c++</h2><p>疑问：：：： 书上的：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">3</span>][<span class="number">3</span>])</span> </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function">    </span></span><br><span class="line">    fun（array）</span><br></pre></td></tr></table></figure>
+<h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><p>查到的是： 数组传递的是数组的首地址，形参可以不用说明数组的大小。(指的是一维数组)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[])</span><span class="comment">//形参，也可以是这样 </span></span></span><br><span class="line"><span class="function">   </span></span><br><span class="line">void test（int *array） //形参定义一个指针变量接受，实参传递的数组的首地址。</span><br></pre></td></tr></table></figure>
+<p>如果在test 函数中有 array[i]++；等语句，那么对应的数组元素会被修改.</p>
+<h4 id="二维或者高维数组"><a href="#二维或者高维数组" class="headerlink" title="二维或者高维数组"></a>二维或者高维数组</h4><p>对于高维数组来说，可以用二维数组名作为实参或者形参，在被调用函数中对形参数组定义时可以<strong>指定所有维数的大小</strong>，也<strong>可以省略第一维的大小说明</strong>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">3</span>][<span class="number">10</span>])</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[][<span class="number">10</span>])</span></span>;</span><br></pre></td></tr></table></figure>
+<p>二者都是合法而且等价的，但是不能把第二维或者更高维的大小省略，如下面的定义是不合法的：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[][])</span></span>;!!!!!!!!!!!!</span><br></pre></td></tr></table></figure>
+<p>因为从实参传递来的是数组的 起始地址，在内存中按照数组排列规则存放（按行存放），而不是区分行和列，如果在形参中不说明列数，则系统无法决定应为多少行多少列，不能只是指定一维而不指定第二维，下面的写法是错误的：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">3</span>][])</span></span>;</span><br></pre></td></tr></table></figure>
+<p>实参数组维数可以大于形参数组，</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">3</span>][<span class="number">10</span>])</span></span>;</span><br></pre></td></tr></table></figure>
+<p>而实参数组定义为： </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">5</span>][<span class="number">10</span>];</span><br></pre></td></tr></table></figure>
+<p>这时形参数组只取实参数组的一部分，其余部分不起作用。 </p>
+<p>可以看到，将二维数组当作参数的时候，必须指明所有维数大小或者省略第一维的，但是不能省略第二维或者更高维的大小，这是由编译器原理限制的。学编译原理的时候应该 知道编译器是这样处理数组的：</p>
+<p>对于数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> p[m][n];</span><br></pre></td></tr></table></figure>
+<p>如果要取p [i] [j] 的值(i&gt;=0 &amp;&amp; i&lt;m &amp;&amp; 0&lt;=j &amp;&amp; j &lt; n)，编译器是这样寻址的，它的地址为： </p>
+<p>p + i*n + j; </p>
+<p>从以上可以看出，如果我们省略了第二维或者更高维的大小，编译器将不知道如何正确的寻址，即这里的n值是在形参定义的时候就要明确知道的。但是我们在编写程序的时候却需要用到各个维数都不固定的二维数组 作为参数，这就难办了，编译器不能识别阿，怎么办呢？不要着急，编译器虽然不能识别，但是我们完全可以不把它当作一个二维数组，而是把它当作一个普通的指针，再另外加上两个参数指明各个维数，然后我们为二维数组手工寻址，这样就达到了将二维数组作为函数的参数传递的目的，根据这个思想，我们可以把维数固定 的参数变为维数随即的参数，例如： </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">3</span>][<span class="number">10</span>])</span></span>; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> <span class="built_in">array</span>[][<span class="number">10</span>])</span></span>;</span><br></pre></td></tr></table></figure>
+<p>变为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> **<span class="built_in">array</span>, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>在转变后的函数中，array[i][j]这样的式子是不对的(不信，大家可以试一下)，因为编译器不能正确的为它寻址，所以我们需要模仿编译器的行为把array[i][j]这样的式子手工转变为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> **<span class="built_in">array</span>, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
+<p> 在调用这样的函数的时候，需要注意一下，如下面的例子： </p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">3</span>] = &#123; &#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>&#125;, &#123;<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>&#125;, &#123;<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<p>fun(a, 3, 3);</p>
+<p>根据不同编译器不同的设置，可能出现warning 或者error,可以进行强制转换如下调用：</p>
+<p>fun((int**)a, 3, 3); </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/22/关于对c-学习中对数组，传参的理解/" data-id="cjsfgtlme0004a8tobne4sdou" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/22/LXJ-CY-的日常之错认妈妈/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LXJ-CY 的日常之错认妈妈 </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/22/关于对c-学习中对数组，传参的理解/">关于对c++学习中对数组，传参的理解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/22/LXJ-CY-的日常之错认妈妈/">LXJ-CY 的日常之错认妈妈 </a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/QT之事件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/读取step文件数据的流程/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/21/第一个typora/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
