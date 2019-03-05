@@ -85,6 +85,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>1、OnTriggerEnter函数中有一个叫做col的参数，它保存了碰撞事件的所有信息。而在函数内部，我们首先检测到与触发器碰撞的游戏对象是不是玩家（“Player”）,这里我i们检测的是标签。（注意：Player 标签是unity 自带的，无需我们手动添加，但是需要我们把标签“贴到”我们的玩家对象上。）</p>
+<p>现在，我们来理一下我们代码的逻辑；</p>
+<p>每当玩家拾取能源<strong>PowerCell</strong>（也就是与之触发器碰撞器发生碰撞）时，<strong>PowerCell</strong>对象会调用自身脚本中的<strong>OnTriggerEnter()</strong>函数，这个函数首先检测与之发生碰撞的对象是否是玩家，如果是，就发生一个消息给玩家对象的脚本<strong>Inventory</strong>，调用它的一个名为<strong>CellPickup()</strong>的函数。这个函数会做三件事情：</p>
+<p>●首先，播放一个拾取能源的音频剪辑；</p>
+<p>●接着，更改<strong>charge</strong>变量，也就是更改当前收集到的能源数，每拾取一个能源，能源数增加<strong>1</strong>；</p>
+<p>●最后，根据玩家收集到的能源数（<strong>charge</strong>变量的值）来为<strong>PowerGUI</strong>对象选择对应纹理。</p>
 
       
     </div>
