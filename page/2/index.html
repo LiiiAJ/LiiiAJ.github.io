@@ -62,6 +62,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-QT之事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/21/QT之事件/" class="article-date">
+  <time datetime="2019-02-21T08:04:01.934Z" itemprop="datePublished">2019-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>关于对qt的学习</p>
+<hr>
+<ol>
+<li><p>什么是qt</p>
+</li>
+<li><p>qt主要是用来做什么</p>
+</li>
+<li><p>Qcreator的几个部分</p>
+</li>
+<li><p>以及qtcreator的使用</p>
+</li>
+<li><p>如何建立-如何使用，然后编写一个小程序，比如说使用槽关联函数，</p>
+</li>
+<li><p>使用槽进行子类父类之间通信的案例</p>
+</li>
+<li><p>qt实现一个小游戏，并且讲解一下这个小游戏</p>
+</li>
+</ol>
+<h1 id="QT之事件"><a href="#QT之事件" class="headerlink" title="QT之事件"></a>QT之事件</h1><p>对于qt事件接受与否的理解，比如说点击串口的X号，弹出一个messagebox提示窗口。</p>
+<p>可以提示你，要不要关闭窗口，也就是说鼠标的点击是一个事件，e由event() 函数，传递事件，然后参数中的E-&gt;accept() 和 E-&gt;ignore()函数，，，一个是接受事件的信号，之后不再往下传了，另一个就是忽略信号了。</p>
+<h2 id="event-函数"><a href="#event-函数" class="headerlink" title="event 函数"></a>event 函数</h2><p>event（）函数的作用就是事件分发了， 比如说  QWIdget -&gt;Event（）—》传递 给鼠标事件或者说传递给   键盘事件，</p>
+<p>参数e 有一个type（），通过type（）返回的值，来判断到底e触发的是哪一种事件，是QEvent::close ，那么就会执行closeevent(e).break 。</p>
+<p>如果是QEvent::MouseMove， 那么就会执行mouseMoveEvent(e).</p>
+<h3 id="事件过滤器"><a href="#事件过滤器" class="headerlink" title="事件过滤器"></a>事件过滤器</h3><p> 事件过滤器主要是，在那个一个一个event事件之前, 定义的一个过滤器，，可以判断对哪个事件进行处理，对哪个事件不进行处理。</p>
+<p>事件过滤器和被安装过滤器的组件必须在 同一个线程，否则。过滤器将不起作用。另外，如果在安装过滤器之后，这两个组件到了不同的线程，那么，只有等到二者重新回到同一线程的时候过滤器才会有效。</p>
+<h3 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h3><p>QT 的事件是整个QT框架的核心机制之一，也比较复杂。说它复杂，更多是因为它涉及到的函数众多，而处理方法也很多。</p>
+<h4 id="（1）按钮类"><a href="#（1）按钮类" class="headerlink" title="（1）按钮类"></a>（1）按钮类</h4><p>QPushButton    按钮</p>
+<p>QTookButton     多选按钮</p>
+<p>QRadioButton     单选按钮</p>
+<h3 id="2-item"><a href="#2-item" class="headerlink" title="(2)item"></a>(2)item</h3><p> QListWidget      点击按钮，然后可以在另外的 label  或者 lingedit 上显示出点击的按钮的值</p>
+<h3 id="（3）容器类"><a href="#（3）容器类" class="headerlink" title="（3）容器类"></a>（3）容器类</h3><p>QstackWidget   同一个界面之下的切换。</p>
+<p>QWidget  通过拖动来使用</p>
+<p>QFrame    是QWidget的一个子类，可以带边框，也可以不带边框</p>
+<h3 id="（4）编辑类"><a href="#（4）编辑类" class="headerlink" title="（4）编辑类"></a>（4）编辑类</h3><p>QComboBox  下拉框 就是下啦选择，</p>
+<p>QLineEdit   行编辑</p>
+<p>  QTextEdit  文本编辑</p>
+<h3 id="5-显示类"><a href="#5-显示类" class="headerlink" title="(5)显示类"></a>(5)显示类</h3><p>Q’label   可以显示 文本  h’t’m’l  图片   视频</p>
+<p>QLcdNumber   显示时间 </p>
+<p>QproGressBar   进度条</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/21/QT之事件/" data-id="cjsvqd7et0003l8toh2yppgih" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-读取step文件数据的流程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/21/读取step文件数据的流程/" class="article-date">
@@ -105,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/21/读取step文件数据的流程/" data-id="cjsuaqjkz000cuwtoc98ir6w8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/21/读取step文件数据的流程/" data-id="cjsvqd7fr000dl8toc4un4fk3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/21/第一个typora/" data-id="cjsuaqjl1000duwtofgsdfhyb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/21/第一个typora/" data-id="cjsvqd7fs000el8to0t1vhi4m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/20/lxj-cy-the-first-day-2-19/" data-id="cjsuaqjkv000auwtoaotvjz7w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/20/lxj-cy-the-first-day-2-19/" data-id="cjsvqd7fn000bl8tovlp8t5xz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -242,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/20/你好，cy-，this-is-my-first-article/" data-id="cjsuaqjkj0005uwtoug8lfke1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/20/你好，cy-，this-is-my-first-article/" data-id="cjsvqd7fe0006l8toezgxmp5s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -287,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/20/hello-world/" data-id="cjsuaqjkf0004uwtops3r0n91" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/20/hello-world/" data-id="cjsvqd7eq0002l8tovp2034nr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,6 +399,10 @@
       <ul>
         
           <li>
+            <a href="/2019/03/05/对于unity中脚本参数的理解/">对于unity中脚本参数的理解</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/04/sweet/">sweet</a>
           </li>
         
@@ -346,10 +416,6 @@
         
           <li>
             <a href="/2019/02/24/注意！/">注意！</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/24/baby-cy的不想开学的前一天/">baby cy的不想开学的前一天</a>
           </li>
         
       </ul>
