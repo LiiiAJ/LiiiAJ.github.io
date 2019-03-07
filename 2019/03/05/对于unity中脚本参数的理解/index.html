@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1、OnTriggerEnter函数中有一个叫做col的参数，它保存了碰撞事件的所有信息。而在函数内部，我们首先检测到与触发器碰撞的游戏对象是不是玩家（“Player”）,这里我i们检测的是标签。（注意：Player 标签是unity 自带的，无需我们手动添加，但是需要我们把标签“贴到”我们的玩家对象上。） 现在，我们来理一下我们代码的逻辑； 每当玩家拾取能源PowerCell（也就是与之触发器碰">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-07T07:31:12.788Z">
+<meta property="og:updated_time" content="2019-03-07T13:23:32.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对于unity中脚本参数的理解">
 <meta name="twitter:description" content="1、OnTriggerEnter函数中有一个叫做col的参数，它保存了碰撞事件的所有信息。而在函数内部，我们首先检测到与触发器碰撞的游戏对象是不是玩家（“Player”）,这里我i们检测的是标签。（注意：Player 标签是unity 自带的，无需我们手动添加，但是需要我们把标签“贴到”我们的玩家对象上。） 现在，我们来理一下我们代码的逻辑； 每当玩家拾取能源PowerCell（也就是与之触发器碰">
@@ -109,10 +109,9 @@
 <p>  5、为空物体增加音频组件，并设置火焰声音</p>
 <p>  6、将此空物体放置到场景中合适的地方</p>
 <ul>
-<li><p>注意： 从上面的步骤来看，粒子效果的展示是需要依托一个空物体而展开的。而粒子系统效果是以组件的形式来添加的。</p>
-</li>
-<li></li>
+<li>注意： 从上面的步骤来看，粒子效果的展示是需要依托一个空物体而展开的。而粒子系统效果是以组件的形式来添加的。</li>
 </ul>
+<h2 id="一个至关重要的函数是OnGUI-，几乎所有与界面相关的工作都是在这个消息处理函数中进行的。"><a href="#一个至关重要的函数是OnGUI-，几乎所有与界面相关的工作都是在这个消息处理函数中进行的。" class="headerlink" title="一个至关重要的函数是OnGUI()，几乎所有与界面相关的工作都是在这个消息处理函数中进行的。"></a>一个至关重要的函数是OnGUI()，几乎所有与界面相关的工作都是在这个消息处理函数中进行的。</h2><h3 id="如何实现多场景，以及两个场景间的切换？"><a href="#如何实现多场景，以及两个场景间的切换？" class="headerlink" title="如何实现多场景，以及两个场景间的切换？"></a>如何实现多场景，以及两个场景间的切换？</h3><p>  只需要Application.LoadLevel(levelName);就可以加载另一个场景。Level经常被称为“关卡”。所以是这样，一个project中可以含有多个scenes,这些场景中是可以自由切换的！</p>
 
       
     </div>
