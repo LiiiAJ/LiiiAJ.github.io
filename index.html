@@ -84,7 +84,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="Level-of-detail-——-多层次细节"><a href="#Level-of-detail-——-多层次细节" class="headerlink" title="Level of detail —— 多层次细节"></a>Level of detail —— 多层次细节</h3><p>性能优化时，我们有时需要对物体进行处理，来让游戏跑起来更流畅</p>
+<p>多层次细节处理，就是让一个物体，在相机距离不同的情况下，显示不同的模型，从而节省性能的开销 </p>
+<p><img src="https://img-blog.csdn.net/20180115013530535?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvQ2hpbmFyQ1NETg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="ä¸¾ä¸ªæ å­é&quot;ç½88"></p>
+<p>开发者做个非常精致的房子，顶点数/面数一定很多</p>
+<p>玩家在游戏中，控制人物相机视角离一座房子近的时候，看起来非常精致好看！游戏体验很好！(假设性能开销为100)</p>
+<p>当玩家走远的时候，这座房子还在那里，但已经走了很远了，房子看起来不是那么清晰了</p>
+<p>但由于房子的模型精度太高无论远近，模型的顶点和面数都不变</p>
+<p>Gpu都需要去处理，并绘制房子的图形效果。性能开销还是100</p>
+<p>那么就有些浪费性能了，当玩家走远的时候，我们只需要让玩家看到一个房子还在那里即可，因为无论精细度多高，玩家看起来房子都很小，看不清</p>
+<p>这是一个房子还好说，现如今没有什么cpu绘制不了这么一个房子。但游戏对象肯定不止一个，大型游戏可能有一堆，几百个，上千个物体</p>
+<p>所以作为开发者，我们无需把一个精度那么高的模型，还放在那里，给CPU GPU增加工作量</p>
+<p>这时候我们就可以用 LOD 技术，来对模型进行 分层级显示</p>
+<p>视角离近时，我们让物体显示精细度高的模型</p>
+<p>视角离远时，我们让物体显示精细度低的模型</p>
+<h2 id="这就是-Level-of-detail-多层次细节优化"><a href="#这就是-Level-of-detail-多层次细节优化" class="headerlink" title="这就是 Level of detail 多层次细节优化"></a>这就是 Level of detail 多层次细节优化</h2>
       
     </div>
     <footer class="article-footer">
